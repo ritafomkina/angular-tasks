@@ -34,43 +34,18 @@ interface Snippet {
 }
 
 interface Thumbnails {
-  default: Default
-  medium: Medium
-  high: High
-  standard: Standard
-  maxres: Maxres
+  default: ThumbnailSize
+  medium: ThumbnailSize
+  high: ThumbnailSize
+  standard: ThumbnailSize
+  maxres: ThumbnailSize
 }
 
-interface Default {
-  url: string
-  width: number
-  height: number
+interface ThumbnailSize {
+  url: string;
+  width: number;
+  height: number;
 }
-
-interface Medium {
-  url: string
-  width: number
-  height: number
-}
-
-interface High {
-  url: string
-  width: number
-  height: number
-}
-
-interface Standard {
-  url: string
-  width: number
-  height: number
-}
-
-interface Maxres {
-  url: string
-  width: number
-  height: number
-}
-
 interface Localized {
   title: string
   description: string
