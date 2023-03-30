@@ -1,15 +1,30 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-  },
-  extends: 'airbnb-base',
+  root: true,
   overrides: [
-  ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  rules: {
-  },
-};
+    {
+      files: ["*.ts"],
+      parserOptions: {
+        project: [
+          "tsconfig.json",
+          "tsconfig.*?.json",
+          "e2e/tsconfig.json"
+        ],
+        createDefaultProgram: true
+      },
+      extends: ["plugin:@angular-eslint/recommended"],
+      rules: {
+      }
+    },
+    {
+      files: ["*.component.html"],
+      extends: ["plugin:@angular-eslint/template/recommended"],
+      rules: {
+        "max-len": ["error", { "code": 140 }]
+      }
+    },
+    {
+      files: ["*.component.ts"],
+      extends: ["plugin:@angular-eslint/template/process-inline-templates"]
+    }
+  ]
+}
