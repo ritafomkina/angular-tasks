@@ -3,7 +3,6 @@ export interface YouTubeResponse {
   etag: string
   pageInfo: PageInfo
   items: Item[]
-} // which will be best name for it?
 
 interface PageInfo {
   totalResults: number
