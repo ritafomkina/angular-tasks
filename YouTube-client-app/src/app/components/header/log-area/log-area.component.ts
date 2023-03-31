@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-log-area',
   templateUrl: './log-area.component.html',
-  styleUrls: ['./log-area.component.scss']
+  styleUrls: ['./log-area.component.scss'],
 })
-export class LogAreaComponent {
+export default class LogAreaComponent {
 
 }
