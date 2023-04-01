@@ -1,0 +1,30 @@
+@import "./../../../../styles.scss";
+
+:host {
+  @include flex;
+  width: 476px;
+  max-height: 24px;
+  margin-right: 10px;
+}
+
+input {
+  padding: 5px 6px;
+  @include font(#333333);
+  border: none;
+  width: 396px;
+  max-height: 24px;
+  background: #EFEFEF;
+}
+
+button {
+  width: 80px;
+  max-height: 24px;
+  border-radius: 0px 4px 4px 0px;
+  @include font(#FFFFFF);
+  filter: drop-shadow(2px 2px 4px rgba(47, 128, 237, 0.25));
+}
+
+.mat-primary {
+  background-color: $colorBlue!important;
+  color: #FFFFFF;
+}

@@ -1,0 +1,10 @@
+@import "./../../../../styles.scss";
+
+:host {
+  @include flex(center, center, column);
+  row-gap: 21px;
+  background-color: $bgd;
+  width: 263px;
+  height: 327px;
+  border-radius: 5px;
+}

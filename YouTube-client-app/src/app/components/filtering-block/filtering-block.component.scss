@@ -1,0 +1,13 @@
+@import "./../../../styles.scss";
+
+:host {
+  max-height: 50px;
+  @include flex(center, start);
+  padding-left: 310px;
+  background-color: $bgd;
+}
+
+p {
+  @include font(#929292);
+  margin: 0;
+}
