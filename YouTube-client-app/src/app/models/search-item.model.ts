@@ -6,4 +6,5 @@ export interface Card {
   likeCount: string;
   dislikeCount: string;
   commentCount: string;
+  publishedAt: string;
 }

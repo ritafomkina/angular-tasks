@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./criteria-buttons.component.scss'],
 })
 export default class CriteriaButtonsComponent {
-public criteriaList: Array<string> = ['date', 'count of views', 'by word or sentance'];
 }

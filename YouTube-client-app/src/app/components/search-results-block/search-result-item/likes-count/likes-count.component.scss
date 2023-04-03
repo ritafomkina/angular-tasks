@@ -1,0 +1,20 @@
+@import "./../../../../../styles.scss";
+
+:host {
+
+}
+
+div {
+  @include flex;
+  column-gap: 3px;
+}
+
+.icon {
+  background-image: url("../../../../../assets/card-assets/liked.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 15px;
+    height: 13px;
+
+}

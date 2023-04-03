@@ -1,0 +1,14 @@
+@import "./../../../../../styles.scss";
+
+button {
+    width: 120px;
+    max-height: 32px;
+    border-radius: 4px 4px 4px 4px;
+    @include font(#FFFFFF);
+    filter: drop-shadow(2px 0px 4px #2F80ED);
+  }
+
+.mat-primary {
+    background-color: $colorBlue !important;
+    color: #FFFFFF;
+  }

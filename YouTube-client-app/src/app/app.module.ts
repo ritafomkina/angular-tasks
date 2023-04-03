@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import AppRoutingModule from './app-routing.module';
 import AppComponent from './app.component';
-
 import HeaderComponent from './components/header/header.component';
 import SearchingAreaComponent from './components/header/searching-area/searching-area.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import MaterialModule from './material/material.module'
+import MaterialModule from './material/material.module';
 import LogoComponent from './components/header/logo/logo.component';
 import LoginInfoComponent from './components/header/login-info/login-info.component';
 import SettingsButtonComponent from './components/header/settings-button/settings-button.component';
@@ -20,7 +19,8 @@ import LikesCountComponent from './components/search-results-block/search-result
 import DislikesCountComponent from './components/search-results-block/search-result-item/dislikes-count/dislikes-count.component';
 import CommentsCountComponent from './components/search-results-block/search-result-item/comments-count/comments-count.component';
 import VideoTitleComponent from './components/search-results-block/search-result-item/video-title/video-title.component';
-import { MoreButtonComponent } from './search-results-block/search-result-item/more-button/more-button.component';
+import MoreButtonComponent from './components/search-results-block/search-result-item/more-button/more-button.component';
+import ColorStatusPipe from './pipes/color-status.pipe';
 
 @NgModule({
   declarations: [
@@ -41,6 +41,7 @@ import { MoreButtonComponent } from './search-results-block/search-result-item/m
     CommentsCountComponent,
     VideoTitleComponent,
     MoreButtonComponent,
+    ColorStatusPipe,
   ],
   imports: [
     BrowserModule,

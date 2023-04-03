@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export default class VideoThumbnailComponent {
   @Input() src: string;
+
   @Input() title: string;
 }

@@ -13,18 +13,20 @@ div {
 }
 
 button {
+  @include flex;
   width: 24px;
   height: 24px;
   border-radius: 5px !important;
   background-color: #FFFFFF;
   border: none;
+  // background-color: $colorBlue;
   filter: drop-shadow(2px 2px 4px rgba(47, 128, 237, 0.25));
 
   .login-icon {
-    background: url("../../../../assets/login.png");
+    background: url("../../../../assets/login.svg");
     background-repeat: no-repeat;
-    background-position: 20% 13%;
-    width: 30px;
-    height: 30px;
+    background-size: cover;
+    background-position: center;
+
   }
 }

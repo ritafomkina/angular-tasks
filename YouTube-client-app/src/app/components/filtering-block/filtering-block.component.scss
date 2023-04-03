@@ -2,8 +2,9 @@
 
 :host {
   max-height: 50px;
-  @include flex(center, start);
-  padding-left: 310px;
+  width: 100%;
+  @include flex(center, baseline);
+  padding-left: 700px;
   background-color: $bgd;
 }
 

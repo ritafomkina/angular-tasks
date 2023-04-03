@@ -7,5 +7,4 @@ import { Component, Input } from '@angular/core';
 })
 export default class CommentsCountComponent {
   @Input() commentCount: string;
-
 }

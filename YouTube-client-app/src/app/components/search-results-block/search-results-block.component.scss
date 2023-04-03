@@ -1,3 +1,10 @@
+@import "./../../../styles.scss";
+
 :host {
   background-color: white;
+  @include flex;
+  flex-wrap: wrap;
+  column-gap: 29px;
+  row-gap: 29px;
+  padding: 31px 171px;
 }

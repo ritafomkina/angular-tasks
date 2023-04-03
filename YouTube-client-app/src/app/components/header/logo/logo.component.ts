@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import AppComponent from '../../../app.component'
 
 @Component({
   selector: 'app-logo',
@@ -8,6 +7,7 @@ import AppComponent from '../../../app.component'
 })
 
 export default class LogoComponent {
-public imgSRC = '../../../../assets/logo.png';
-@Input() title: string;
+  public imgSRC = '../../../../assets/logo.png';
+
+  @Input() title: string;
 }
