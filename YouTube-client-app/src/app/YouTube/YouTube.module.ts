@@ -16,10 +16,10 @@ import SearchResultsBlockComponent from './components/search-results-block/searc
 import SharedModule from '../shared/shared.module';
 import DetailedInfoComponent from './components/detailed-info/detailed-info.component';
 import FormatDatePipe from './pipes/format-date.pipe';
-import { MainPageComponent } from './components/main-page/main-page.component';
+import MainPageComponent from './components/main-page/main-page.component';
 
 const routes: Routes = [
-  { path: '', component: SearchResultsBlockComponent },
+  { path: '', component: MainPageComponent },
 ];
 
 @NgModule({
