@@ -1,7 +1,7 @@
-<div class="container" [ngClass]="{
-  'flex-start': search
-}">
-  <app-header (showSearchingBlock)="onShowSearchingBlock()" (showFilteringBlock)="onShowFilteringBlock()"></app-header>
-  <app-filtering-block *ngIf="search && filters"></app-filtering-block>
-  <app-search-results-block *ngIf="search"></app-search-results-block>
-</div>
+<app-header (showSearchingBlock)="onShowSearchingBlock()" (showFilteringBlock)="onShowFilteringBlock()"></app-header>
+<!-- <app-filtering-block *ngIf="search && filters"></app-filtering-block> -->
+<main>
+  <router-outlet></router-outlet>
+</main>
+<!-- <app-filtering-block *ngIf="search && filters"></app-filtering-block>
+<app-search-results-block *ngIf="search"></app-search-results-block> -->

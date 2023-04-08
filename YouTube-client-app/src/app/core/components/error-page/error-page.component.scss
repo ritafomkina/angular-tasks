@@ -1,0 +1,12 @@
+@import "./../../../../styles.scss";
+
+:host {
+  width: 200px;
+  height: 200px;
+  @include flex;
+  column-gap: 30px;
+}
+
+p {
+  @include font(#828282, 'Roboto', normal, 700, 24);
+}

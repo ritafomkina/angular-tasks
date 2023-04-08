@@ -1,0 +1,49 @@
+<button mat-mini-fab aria-label="back">
+  <mat-icon class="icon"></mat-icon>
+</button>
+<div class="card {{card.publishedAt | colorStatus}}">
+<img [src]="card.imgSRC" [alt]="card.title">
+<div class="info-container">
+  <h2>
+    {{card.title}}
+  </h2>
+  <p class="pub-date">{{card.publishedAt | formatDate}}</p>
+  <div class="desc-container">
+    <h3>Description:</h3>
+    <article>{{ card.description }}</article>
+  </div>
+  <div class="statistic-container">
+    <app-views-count [viewCount]="card.viewCount"></app-views-count>
+    <app-likes-count [likeCount]="card.likeCount"></app-likes-count>
+    <app-dislikes-count [dislikeCount]="card.dislikeCount"></app-dislikes-count>
+    <app-comments-count [commentCount]="card.commentCount"></app-comments-count>
+  </div>
+</div>
+</div>
+
+
+<!-- <div class="info-container">
+  <h2>{{ title }}</h2>
+  <p>{{ publishedAt }}</p>
+  <h3>Description:</h3>
+  <article>{{ description }}</article>
+  <div class="statistic-container">
+    <div>
+      <mat-icon class="icon" ></mat-icon>
+    <span>{{ viewCount }}</span>
+    </div>
+    <div>
+      <mat-icon class="icon"></mat-icon>
+    <span>{{ likeCount }}</span>
+    </div>
+    <div>
+      <mat-icon class="icon"></mat-icon>
+    <span>{{ dislikeCount }}</span>
+    </div>
+    <div>
+      <mat-icon class="icon"></mat-icon>
+    <span>{{ commentCount }}</span>
+    </div>
+  </div>
+</div>
+<h2>{{ title }}</h2> -->

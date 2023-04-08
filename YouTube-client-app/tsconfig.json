@@ -24,12 +24,6 @@
       "ES2022",
       "dom"
     ],
-    "paths": {
-      "@src": ["src/*"],
-      "@core": ["src/app/core*"],
-      "@shared": ["src/app/shared/*"],
-      "@youtube": ["src/app/you-tube/*"],
-    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
