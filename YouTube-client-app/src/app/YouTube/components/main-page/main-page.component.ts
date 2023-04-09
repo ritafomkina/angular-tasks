@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import SettingBtnControlService from 'src/app/core/services/setting-btn-control.service';
 
 @Component({
   selector: 'app-main-page',
@@ -6,18 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-page.component.scss'],
 })
 export default class MainPageComponent {
-  // @Input()
+  constructor(public settingBtnControlService: SettingBtnControlService) {
+
+  }
+
+  // @Output() sort = new EventEmitter<string>();
+
+  sort: string;
+
+  sortingState = true;
+
+  sortBy(criteria: string) {
+    this.sort = criteria;
+    this.sortingState = !this.sortingState;
+  }
+
   title = 'YouTube-client-app';
-
-  search = true;
-
-  filters = true;
-
-  onShowSearchingBlock() {
-    this.search = true;
-  }
-
-  onShowFilteringBlock() {
-    this.filters = !this.filters;
-  }
 }

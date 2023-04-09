@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Card } from 'src/app/YouTube/models/search-item.model';
 import DataService from 'src/app/YouTube/services/cart-data.service';
@@ -8,7 +8,7 @@ import DataService from 'src/app/YouTube/services/cart-data.service';
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.scss'],
 })
-export default class ContainerComponent {
+export default class ContainerComponent implements OnInit {
   public card: Card;
 
   constructor(

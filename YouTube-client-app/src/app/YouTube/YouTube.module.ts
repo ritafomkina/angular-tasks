@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import ColorStatusPipe from './pipes/color-status.pipe';
-import CriteriaButtonsComponent from './components/filtering-block/criteria-buttons/criteria-buttons.component';
 import FilteringBlockComponent from './components/filtering-block/filtering-block.component';
 import CommentsCountComponent from './components/search-results-block/search-result-item/comments-count/comments-count.component';
 import DislikesCountComponent from './components/search-results-block/search-result-item/dislikes-count/dislikes-count.component';
@@ -21,7 +20,6 @@ import ContainerComponent from './components/detailed-info/container/container.c
 
 @NgModule({
   declarations: [
-    CriteriaButtonsComponent,
     FilteringBlockComponent,
     SearchResultsBlockComponent,
     SearchResultItemComponent,

@@ -10,13 +10,11 @@ export default class SearchingAreaComponent {
   constructor(
     private router: Router,
   ) {}
-  // public search: boolean = false;
 
   @Output() showSearchingBlock = new EventEmitter<boolean>();
 
   onShowSearchingBlock() {
     this.router.navigateByUrl('/main');
-    console.log('fuck');
     this.showSearchingBlock.emit();
   }
 }

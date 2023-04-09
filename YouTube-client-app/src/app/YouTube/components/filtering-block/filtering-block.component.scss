@@ -1,14 +1,28 @@
 @import "../../../../styles.scss";
+// @import "../../../../../styles.scss";
+
 
 :host {
+  @include flex;
   max-height: 50px;
   width: 100%;
-  @include flex(center, baseline);
+  @include flex(center, start);
   padding-left: 350px;
   background-color: $bgd;
 }
 
-p {
-  @include font(#929292);
-  margin: 0;
+button {
+  text-decoration-line: underline;
+  @include font($colorBlue);
+}
+
+button:nth-last-child(2) {
+  text-decoration-line:none;
+}
+
+input {
+background: #FFFFFF;
+border: none;
+width: 149px;
+height: 13px;
 }

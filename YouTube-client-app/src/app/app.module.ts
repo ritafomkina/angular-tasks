@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import AppRoutingModule from './app-routing.module';
 import AppComponent from './app.component';
 import CoreModule from './core/core.module';
-// import YouTubeModule from './YouTube/YouTube.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,6 @@ import CoreModule from './core/core.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
-    // YouTubeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
