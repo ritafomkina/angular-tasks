@@ -1,25 +1,7 @@
 @import "../../../../styles.scss";
 
 :host {
-  @include flex(start, start);
-  padding-top: 50px;
-}
-
-button {
-  width: 32px;
-  height: 32px;
-  background-color: $colorBlue;
-  border: none;
-  filter: drop-shadow(-2px 2px 4px rgba(47, 128, 237, 0.25));
-border-radius: 5px 0px 0px 5px !important;
-
-.icon {
-  background-image: url("./../../../../assets/back_button.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  // background-color: red;
-}
+  @include flex(center, center);
 }
 
 .card {
@@ -33,13 +15,13 @@ border-radius: 0px 5px 5px 5px;
 }
 
 img {
-  min-height: 80%;
+  min-height: 60%;
 }
 
 .info-container{
-  padding: 35px;
+  padding: 20px;
   @include flex(start, start, column);
-  row-gap: 15px;
+  row-gap: 5px;
 }
 .desc-container {
   @include flex(start, start, column);

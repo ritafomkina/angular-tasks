@@ -1,0 +1,37 @@
+@import "../../../../styles.scss";
+
+:host {
+  width: 344px;
+height: 248px;
+border-radius: 5px;
+background-color: #E0E0E0;
+@include flex(center, center);
+margin: 100px;
+}
+
+.wrapper {
+  @include flex(start, center, column);
+  padding: 17px;
+}
+
+h3 {
+  @include font(#000000, 'Roboto', normal, 700, 18px, 21px);
+}
+
+.mat-form-field{
+  width:300px !important;
+}
+
+button {
+  max-height: 30px;
+  width: 124px;
+  border-radius: 4px 4px 4px 4px;
+  @include font(#FFFFFF);
+  filter: drop-shadow(2px 0px 4px #2F80ED);
+
+}
+
+.mdc-button {
+  background-color: $colorBlue !important;
+  color: #FFFFFF;
+}

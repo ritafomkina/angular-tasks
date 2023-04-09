@@ -16,6 +16,6 @@ export default class MoreButtonComponent {
   @Input() card: Card;
 
   public openDetailInfo() {
-    this.router.navigate(['/video', this.card.id]);
+    this.router.navigate(['main/video', this.card.id]);
   }
 }

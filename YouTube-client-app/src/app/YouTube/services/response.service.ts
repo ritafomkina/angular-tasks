@@ -757,5 +757,4 @@ export default class ResponseService {
       },
     ],
   };
-
 }

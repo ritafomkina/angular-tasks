@@ -10,7 +10,7 @@ export default class FormatDatePipe implements PipeTransform {
 
   public transform(str: string): string {
     const date = new Date(Date.parse(str));
-    const formatedDate = `${this.week[date.getDay()]}, ${this.months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+    const formatedDate = `${this.week[date.getDay()]}, ${this.months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
     return formatedDate;
   }
 }

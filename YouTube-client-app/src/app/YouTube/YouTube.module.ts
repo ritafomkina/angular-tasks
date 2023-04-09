@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
 import ColorStatusPipe from './pipes/color-status.pipe';
 import CriteriaButtonsComponent from './components/filtering-block/criteria-buttons/criteria-buttons.component';
 import FilteringBlockComponent from './components/filtering-block/filtering-block.component';
@@ -17,10 +16,8 @@ import SharedModule from '../shared/shared.module';
 import DetailedInfoComponent from './components/detailed-info/detailed-info.component';
 import FormatDatePipe from './pipes/format-date.pipe';
 import MainPageComponent from './components/main-page/main-page.component';
-
-const routes: Routes = [
-  { path: '', component: MainPageComponent },
-];
+import YouTubeRoutingModule from './YouTube-routing.module';
+import ContainerComponent from './components/detailed-info/container/container.component';
 
 @NgModule({
   declarations: [
@@ -39,16 +36,16 @@ const routes: Routes = [
     DetailedInfoComponent,
     FormatDatePipe,
     MainPageComponent,
+    ContainerComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(routes),
+    YouTubeRoutingModule,
   ],
   exports: [
     FilteringBlockComponent,
     SearchResultsBlockComponent,
-    RouterModule,
   ],
 })
 export default class YouTubeModule { }
