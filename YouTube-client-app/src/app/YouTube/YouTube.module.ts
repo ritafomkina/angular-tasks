@@ -17,6 +17,7 @@ import FormatDatePipe from './pipes/format-date.pipe';
 import MainPageComponent from './components/main-page/main-page.component';
 import YouTubeRoutingModule from './YouTube-routing.module';
 import ContainerComponent from './components/detailed-info/container/container.component';
+import FilterCardsPipe from './pipes/filter-cards.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import ContainerComponent from './components/detailed-info/container/container.c
     FormatDatePipe,
     MainPageComponent,
     ContainerComponent,
+    FilterCardsPipe,
   ],
   imports: [
     CommonModule,

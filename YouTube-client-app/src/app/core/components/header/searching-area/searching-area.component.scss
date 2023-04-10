@@ -7,6 +7,9 @@
   margin-right: 10px;
 }
 
+form {
+  @include flex;
+}
 input {
   padding: 5px 6px;
   @include font(#333333);

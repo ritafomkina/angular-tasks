@@ -1,6 +1,6 @@
 <app-search-result-item
 
-  *ngFor="let card of cards"
+  *ngFor="let card of cards | filterCards: value"
   [card]="card"
 
 ></app-search-result-item>

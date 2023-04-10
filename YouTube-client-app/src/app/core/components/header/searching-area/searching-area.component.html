@@ -1,2 +1,4 @@
-<input matInput type="text" placeholder="search..." value="">
-<button mat-raised-button color="primary" class="btn" (click)="onShowSearchingBlock()">search</button>
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="search-form">
+    <input matInput type="text" placeholder="search..." value="" formControlName="search">
+<button mat-raised-button type="submit" color="primary" class="btn">search</button>
+</form>
