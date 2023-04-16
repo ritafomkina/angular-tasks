@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Card } from 'src/app/YouTube/models/search-item.model';
-import DataService from 'src/app/YouTube/services/cart-data.service';
+import DataService from 'src/app/YouTube/services/get-data.service';
+import SearchingService from 'src/app/YouTube/services/searching.service';
 
 @Component({
   selector: 'app-container',
@@ -14,9 +15,10 @@ export default class ContainerComponent implements OnInit {
   constructor(
     public route: ActivatedRoute,
     private dataService: DataService,
+    private searchingService: SearchingService,
   ) {}
 
-  public cards: Card[] = this.dataService.getData();
+  public cards: Card[];
 
   ngOnInit() {
     this.route.params.subscribe(

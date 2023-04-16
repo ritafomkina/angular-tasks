@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 import SettingBtnControlService from 'src/app/core/services/setting-btn-control.service';
-import SortingService from '../../services/sorting.service';
+// import SortingService from '../../services/sorting.service';
 
 @Component({
   selector: 'app-main-page',
@@ -10,7 +10,7 @@ import SortingService from '../../services/sorting.service';
 export default class MainPageComponent {
   constructor(
     public settingBtnControlService: SettingBtnControlService,
-    private sortingService: SortingService,
+    // private sortingService: SortingService,
   ) {
 
   }

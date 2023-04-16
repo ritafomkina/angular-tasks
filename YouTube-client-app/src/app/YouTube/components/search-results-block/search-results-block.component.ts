@@ -1,19 +1,19 @@
-import {
-  Component, Input, OnChanges, OnInit,
-} from '@angular/core';
-import DataService from '../../services/cart-data.service';
+import { Component, Input, OnChanges } from '@angular/core';
+// import DataService from '../../services/cart-data.service';
 import { Card } from '../../models/search-item.model';
-import SortingService from '../../services/sorting.service';
+// import SortingService from '../../services/sorting.service';
 import SearchingService from '../../services/searching.service';
+import DataService from '../../services/get-data.service';
+import SortingService from '../../services/sorting.service';
 
 @Component({
   selector: 'app-search-results-block',
   templateUrl: './search-results-block.component.html',
   styleUrls: ['./search-results-block.component.scss'],
 })
-export default class SearchResultsBlockComponent implements OnInit, OnChanges {
+export default class SearchResultsBlockComponent implements OnChanges {
   constructor(
-    private dataService: DataService,
+    public dataService: DataService,
     private sorting: SortingService,
     private searchingService: SearchingService,
   ) {}
@@ -24,16 +24,19 @@ export default class SearchResultsBlockComponent implements OnInit, OnChanges {
 
   public cards: Card[];
 
-  public value = '';
-
   ngOnChanges(): void {
-    this.value = this.searchingService.value;
-    this.cards = this.sort
-      ? this.sorting.getSortedDataBy(this.sort, this.sortingState)
-      : this.dataService.getData();
-  }
-
-  ngOnInit() {
-    this.cards = this.dataService.getData();
+    this.searchingService.currentMessage.subscribe((message) => {
+      if (message.length >= 3) {
+        this.dataService.getData('кот')
+          .subscribe((items) => {
+            this.dataService.cards = items;// сохраню полченные карточки в сервисе,
+            // чтобы потом другие компоненты не делали http запрос, а получали из сервиса
+            this.cards = this.sort
+              ? this.sorting.getSortedDataBy(this.sort, this.sortingState)
+              : items;
+            console.log(items);
+          });
+      }
+    });
   }
 }
