@@ -11,7 +11,7 @@ export default class AuthGuardService {
 
   public canActivate():
   boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    // return this.authService.userIsLoggedIn;
-    return true;
+    return this.authService.userIsLoggedIn;
+    // return true;
   }
 }

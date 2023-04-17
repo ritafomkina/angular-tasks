@@ -1,6 +1,5 @@
-import { Component, OnChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import SettingBtnControlService from 'src/app/core/services/setting-btn-control.service';
-// import SortingService from '../../services/sorting.service';
 
 @Component({
   selector: 'app-main-page',
@@ -10,18 +9,17 @@ import SettingBtnControlService from 'src/app/core/services/setting-btn-control.
 export default class MainPageComponent {
   constructor(
     public settingBtnControlService: SettingBtnControlService,
-    // private sortingService: SortingService,
   ) {
 
   }
 
-  sort: string;
+  sortCriteria: string;
 
-  sortingState = true;
+  isSortingApplied = true;
 
   sortBy(criteria: string) {
-    this.sort = criteria;
-    this.sortingState = !this.sortingState;
+    this.sortCriteria = criteria;
+    this.isSortingApplied = !this.isSortingApplied;
   }
 
   title = 'YouTube-client-app';

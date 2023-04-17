@@ -8,7 +8,6 @@ import SearchingAreaComponent from './components/header/searching-area/searching
 import SettingsButtonComponent from './components/header/settings-button/settings-button.component';
 import LoginInfoComponent from './components/header/login-info/login-info.component';
 import ErrorPageComponent from './components/error-page/error-page.component';
-import EmptyPageComponent from './components/empty-page/empty-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import EmptyPageComponent from './components/empty-page/empty-page.component';
     SettingsButtonComponent,
     LoginInfoComponent,
     ErrorPageComponent,
-    EmptyPageComponent,
   ],
   imports: [
     CommonModule,

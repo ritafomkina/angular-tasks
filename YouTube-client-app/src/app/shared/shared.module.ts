@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { HttpClientModule } from '@angular/common/http';
 
 const MaterialComponents = [
-  MatButtonModule, MatInputModule, MatIconModule, HttpClientModule,
+  MatButtonModule, MatInputModule, MatIconModule,
+];
+
+const modules = [
+  HttpClientModule,
 ];
 
 @NgModule({
@@ -15,7 +19,7 @@ const MaterialComponents = [
     CommonModule,
   ],
   exports: [
-    ...MaterialComponents,
+    ...MaterialComponents, ...modules,
   ],
 })
 export default class SharedModule { }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Card } from '../models/search-item.model';
-import DataService from './get-data.service';
+import DataService from './data.service';
 
 @Injectable({
   providedIn: 'root',

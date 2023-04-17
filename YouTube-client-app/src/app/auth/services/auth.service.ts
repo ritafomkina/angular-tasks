@@ -10,8 +10,4 @@ export default class AuthService {
     localStorage.setItem(token, user);
     this.userIsLoggedIn = true;
   }
-
-  // public logOut(token: string): void {
-  //   localStorage.removeItem(token);
-  // }
 }

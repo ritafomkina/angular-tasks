@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import SharedModule from '../shared/shared.module';
 import ColorStatusPipe from './pipes/color-status.pipe';
 import FilteringBlockComponent from './components/filtering-block/filtering-block.component';
 import CommentsCountComponent from './components/search-results-block/search-result-item/comments-count/comments-count.component';
@@ -11,12 +12,11 @@ import VideoThumbnailComponent from './components/search-results-block/search-re
 import VideoTitleComponent from './components/search-results-block/search-result-item/video-title/video-title.component';
 import ViewsCountComponent from './components/search-results-block/search-result-item/views-count/views-count.component';
 import SearchResultsBlockComponent from './components/search-results-block/search-results-block.component';
-import SharedModule from '../shared/shared.module';
 import DetailedInfoComponent from './components/detailed-info/detailed-info.component';
 import FormatDatePipe from './pipes/format-date.pipe';
 import MainPageComponent from './components/main-page/main-page.component';
 import YouTubeRoutingModule from './YouTube-routing.module';
-import ContainerComponent from './components/detailed-info/container/container.component';
+import ContainerComponent from './components/detailed-info/container/container-component';
 import FilterCardsPipe from './pipes/filter-cards.pipe';
 
 @NgModule({
