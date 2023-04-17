@@ -1,0 +1,23 @@
+@import "../../../../../styles.scss";
+
+:host {
+  @include flex(start, start);
+  padding-top: 50px;
+}
+
+button {
+  width: 32px;
+  height: 32px;
+  background-color: $colorBlue;
+  border: none;
+  filter: drop-shadow(-2px 2px 4px rgba(47, 128, 237, 0.25));
+border-radius: 5px 0px 0px 5px !important;
+
+.icon {
+  background-image: url("./../../../../../assets/back_button.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  // background-color: red;
+}
+}

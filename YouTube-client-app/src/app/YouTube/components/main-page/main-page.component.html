@@ -1,0 +1,2 @@
+<app-filtering-block *ngIf="settingBtnControlService.filters" (sort)="sortBy($event)"></app-filtering-block>
+<app-search-results-block [sort]="sort" [sortingState]="sortingState"></app-search-results-block>

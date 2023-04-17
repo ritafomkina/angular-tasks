@@ -1,0 +1,4 @@
+<form [formGroup]="searchForm" class="search-form">
+    <input matInput type="text" placeholder="search..." value="" formControlName="search" (input)="onInput($event)">
+<!-- <button mat-raised-button type="submit" color="primary" class="btn">search</button> -->
+</form>

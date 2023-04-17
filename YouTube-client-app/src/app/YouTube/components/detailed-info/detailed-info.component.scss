@@ -1,0 +1,72 @@
+@import "../../../../styles.scss";
+
+:host {
+  @include flex(center, center);
+}
+
+.card {
+  height: 380px;
+  width: 900px;
+  padding: 35px;
+  @include flex;
+  background: #E5E5E5;
+box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.25);
+border-radius: 0px 5px 5px 5px;
+}
+
+img {
+  min-height: 60%;
+}
+
+.info-container{
+  padding: 20px;
+  @include flex(start, start, column);
+  row-gap: 5px;
+}
+.desc-container {
+  @include flex(start, start, column);
+  row-gap: 8px;
+}
+
+
+h2 {
+  @include font(#000000, 'Roboto', normal, 700, 24px, 28px);
+  margin: 0;
+}
+
+.pub-date {
+  align-self: end;
+  @include font(#828282, 'Roboto', normal, 400, 10px, 11px);
+  margin: 0;
+}
+
+h3 {
+  @include font(#000000);
+  line-height: 16px;
+  margin: 0;
+}
+
+article {
+  @include font(#828282);
+}
+
+.statistic-container{
+  @include flex;
+  column-gap: 17px;
+}
+
+.blue {
+  border-bottom: 5px solid $colorBlue;
+}
+
+.green {
+  border-bottom: 5px solid #27AE60;
+}
+
+.red {
+  border-bottom: 5px solid #EB5757;
+}
+
+.yellow {
+  border-bottom: 5px solid #F2C94C;
+}

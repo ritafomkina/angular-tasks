@@ -7,16 +7,4 @@ import { Component } from '@angular/core';
 })
 export default class AppComponent {
   title = 'YouTube-client-app';
-
-  search = false;
-
-  filters = true;
-
-  onShowSearchingBlock() {
-    this.search = true;
-  }
-
-  onShowFilteringBlock() {
-    this.filters = !this.filters;
-  }
 }
