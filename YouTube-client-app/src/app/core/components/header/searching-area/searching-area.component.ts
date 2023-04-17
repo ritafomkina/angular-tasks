@@ -21,16 +21,13 @@ export default class SearchingAreaComponent {
     search: '',
   });
 
-  // @Output() searchBy = new EventEmitter<string | null>();
-
-  // onShowSearchingBlock() {
-  //   this.router.navigateByUrl('/main');
-  //   this.showSearchingBlock.emit();
-  // }
-
-  onSubmit() {
-    this.router.navigateByUrl('/main');
-    // this.searchBy.emit(this.searchForm.value.search);
-    this.searchingService.value = this.searchForm.value.search || '';
+  onInput(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (!input.value?.length) {
+      return;
+    }
+    const { value } = input;
+    this.searchingService.changeMessage(value);
+    // console.log(value);
   }
 }

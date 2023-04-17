@@ -24,9 +24,8 @@ export default class AuthComponent {
 
   onSubmit(): void {
     if (this.authForm.value.login && this.authForm.value.password) {
-      localStorage.setItem('user', JSON.stringify(this.authForm.value));
-      this.authService.userIsLoggedIn = true;
-      this.router.navigateByUrl('main');
+      this.authService.setPassword('user', JSON.stringify(this.authForm.value));
+      this.router.navigateByUrl('/main');
     }
   }
 }

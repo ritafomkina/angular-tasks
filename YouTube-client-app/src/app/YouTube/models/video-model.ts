@@ -1,13 +1,8 @@
-export interface YouTubeResponse {
+export interface VideoYouTubeResponse {
   kind: string
   etag: string
-  pageInfo: PageInfo
   items: Item[]
-}
-
-interface PageInfo {
-  totalResults: number
-  resultsPerPage: number
+  pageInfo: PageInfo
 }
 
 interface Item {
@@ -29,23 +24,23 @@ interface Snippet {
   categoryId: string
   liveBroadcastContent: string
   localized: Localized
-  defaultAudioLanguage: string
-  defaultLanguage?: string
+  defaultAudioLanguage?: string
 }
 
 interface Thumbnails {
-  default: ThumbnailSize
-  medium: ThumbnailSize
-  high: ThumbnailSize
-  standard: ThumbnailSize
-  maxres: ThumbnailSize
+  default: ThumbnailsSizes
+  medium: ThumbnailsSizes
+  high: ThumbnailsSizes
+  standard?: ThumbnailsSizes
+  maxres?: ThumbnailsSizes
 }
 
-interface ThumbnailSize {
-  url: string;
-  width: number;
-  height: number;
+interface ThumbnailsSizes {
+  url: string
+  width: number
+  height: number
 }
+
 interface Localized {
   title: string
   description: string
@@ -54,7 +49,11 @@ interface Localized {
 interface Statistics {
   viewCount: string
   likeCount: string
-  dislikeCount: string
   favoriteCount: string
   commentCount: string
+}
+
+interface PageInfo {
+  totalResults: number
+  resultsPerPage: number
 }

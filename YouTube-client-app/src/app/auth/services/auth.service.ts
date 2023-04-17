@@ -5,4 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export default class AuthService {
   userIsLoggedIn = false;
+
+  setPassword(token: string, user: string): void {
+    localStorage.setItem(token, user);
+    this.userIsLoggedIn = true;
+  }
+
+  // public logOut(token: string): void {
+  //   localStorage.removeItem(token);
+  // }
 }
