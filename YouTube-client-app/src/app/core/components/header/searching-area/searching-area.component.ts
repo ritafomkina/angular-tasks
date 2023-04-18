@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import SearchingService from 'src/app/YouTube/services/searching.service';
 
 @Component({
@@ -10,12 +9,9 @@ import SearchingService from 'src/app/YouTube/services/searching.service';
 })
 export default class SearchingAreaComponent {
   constructor(
-    private router: Router,
     private formBuilder: FormBuilder,
     private searchingService: SearchingService,
   ) {}
-
-  // value = '';
 
   searchForm = this.formBuilder.group({
     search: '',
@@ -27,7 +23,6 @@ export default class SearchingAreaComponent {
       return;
     }
     const { value } = input;
-    this.searchingService.changeMessage(value);
-    // console.log(value);
+    this.searchingService.changeMessage(value.trim());
   }
 }

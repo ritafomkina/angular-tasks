@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+// import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import SharedModule from '../shared/shared.module';
 import ColorStatusPipe from './pipes/color-status.pipe';
@@ -18,6 +19,7 @@ import MainPageComponent from './components/main-page/main-page.component';
 import YouTubeRoutingModule from './YouTube-routing.module';
 import ContainerComponent from './components/detailed-info/container/container-component';
 import FilterCardsPipe from './pipes/filter-cards.pipe';
+// import YouTubeHttpInterceptor from './interceptors/http-interceptor';
 
 @NgModule({
   declarations: [
@@ -40,9 +42,13 @@ import FilterCardsPipe from './pipes/filter-cards.pipe';
   ],
   imports: [
     CommonModule,
+    // HttpClientModule,
     SharedModule,
     YouTubeRoutingModule,
   ],
+  // providers: [
+  //   { provide: HTTP_INTERCEPTORS, useClass: YouTubeHttpInterceptor, multi: true },
+  // ],
   exports: [
     FilteringBlockComponent,
     SearchResultsBlockComponent,

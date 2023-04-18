@@ -59,11 +59,18 @@ export default class DataService {
               }),
             );
         }),
-        catchError(() => EMPTY),
+        catchError((error) => {
+          console.log('[ERROR]', error);
+          return EMPTY;
+        }),
       );
   }
 
   public get savedCards(): Card[] {
     return this.cards;
+  }
+
+  public removeSavedCards(): void {
+    this.cards = [];
   }
 }
