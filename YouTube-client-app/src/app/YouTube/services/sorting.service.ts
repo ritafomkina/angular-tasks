@@ -8,9 +8,10 @@ import DataService from './data.service';
 export default class SortingService {
   constructor(private dataService: DataService) { }
 
-  private cards: Card[] = this.dataService.cards;
+  private cards: Card[];
 
   private sortCards(criteria: string, state: boolean): Card[] {
+    this.cards = this.dataService.savedCards;
     if (this.cards.length) {
       if (criteria === 'date') {
         return state

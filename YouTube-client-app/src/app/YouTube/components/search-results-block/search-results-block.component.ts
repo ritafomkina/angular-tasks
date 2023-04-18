@@ -27,6 +27,7 @@ export default class SearchResultsBlockComponent implements OnChanges {
       if (message.length >= 3) {
         this.getCards(message);
       }
+      console.log(this.dataService.cards);
     });
   }
 

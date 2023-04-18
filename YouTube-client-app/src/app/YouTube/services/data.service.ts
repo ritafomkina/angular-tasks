@@ -62,4 +62,8 @@ export default class DataService {
         catchError(() => EMPTY),
       );
   }
+
+  public get savedCards(): Card[] {
+    return this.cards;
+  }
 }
