@@ -5,7 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import AppRoutingModule from './app-routing.module';
 import AppComponent from './app.component';
 import CoreModule from './core/core.module';
-import YouTubeHttpInterceptor from './YouTube/interceptors/http-interceptor';
+import YouTubeHttpInterceptor from './youtube/interceptors/http-interceptor';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import YouTubeHttpInterceptor from './YouTube/interceptors/http-interceptor';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: YouTubeHttpInterceptor, multi: true },
-  ],
+  ], // не работает без этого провайдера в арр почему-то
   bootstrap: [AppComponent],
 })
 export default class AppModule { }

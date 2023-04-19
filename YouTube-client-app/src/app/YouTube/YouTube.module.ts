@@ -16,7 +16,7 @@ import SearchResultsBlockComponent from './components/search-results-block/searc
 import DetailedInfoComponent from './components/detailed-info/detailed-info.component';
 import FormatDatePipe from './pipes/format-date.pipe';
 import MainPageComponent from './components/main-page/main-page.component';
-import YouTubeRoutingModule from './YouTube-routing.module';
+import YouTubeRoutingModule from './youtube-routing.module';
 import ContainerComponent from './components/detailed-info/container/container-component';
 import FilterCardsPipe from './pipes/filter-cards.pipe';
 // import YouTubeHttpInterceptor from './interceptors/http-interceptor';

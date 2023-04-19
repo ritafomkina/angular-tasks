@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Card } from 'src/app/YouTube/models/search-item.model';
+import { Card } from 'src/app/youtube/models/search-item.model';
 
 @Pipe({
   name: 'filterCards',
