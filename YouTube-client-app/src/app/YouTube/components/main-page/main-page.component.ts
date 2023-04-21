@@ -10,16 +10,6 @@ export default class MainPageComponent {
   constructor(
     public settingBtnControlService: SettingBtnControlService,
   ) {
-
-  }
-
-  sortCriteria: string;
-
-  isSortingApplied = true;
-
-  sortBy(criteria: string) {
-    this.sortCriteria = criteria;
-    this.isSortingApplied = !this.isSortingApplied;
   }
 
   title = 'YouTube-client-app';

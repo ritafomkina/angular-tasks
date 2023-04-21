@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import FilteringService from '../../services/filtering.service';
+import SortingService from '../../services/sorting.service';
 
 @Component({
   selector: 'app-filtering-block',
@@ -6,9 +8,26 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./filtering-block.component.scss'],
 })
 export default class FilteringBlockComponent {
-  @Output() sort = new EventEmitter<string>();
+  constructor(
+    private filteringService: FilteringService,
+    private sortingService: SortingService,
+  ) {
+  }
 
-  sortBy(criteria: string) {
-    this.sort.emit(criteria);
+  public isIncreasing = false;
+
+  public sortBy(criteriaString: string): void {
+    this.isIncreasing = !this.isIncreasing;
+    const { isIncreasing } = this;
+    this.sortingService.sort({ criteriaString, isIncreasing });
+  }
+
+  public onSubmit(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (!input.value?.length) {
+      return;
+    }
+    const { value } = input;
+    this.filteringService.changeString(value.trim());
   }
 }

@@ -42,7 +42,7 @@ export default class DataService {
             .pipe(
               map((videoResponse: VideoYouTubeResponse): Card[] => {
                 const cardsList = videoResponse.items;
-                return cardsList.map((item) => {
+                this.cards = cardsList.map((item) => {
                   const card: Card = {
                     id: item.id,
                     imgSRC: item.snippet.thumbnails.medium.url,
@@ -56,6 +56,11 @@ export default class DataService {
                   };
                   return card;
                 });
+                return this.cards;
+                // я сохраняю полученнуе данные в поле сервиса и в др сервисах
+                // достаю их из этого поля, а не из подписки.
+                // Так как при подписке отправляется новый запрос.
+                // Мой подход хороший для перформанса или нет?
               }),
             );
         }),

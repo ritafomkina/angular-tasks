@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Card } from '../models/search-item.model';
+import { SortingCriteria } from '../models/sorting-criteria.model';
 import DataService from './data.service';
 
 @Injectable({
@@ -9,6 +11,14 @@ export default class SortingService {
   constructor(private dataService: DataService) { }
 
   private cards: Card[];
+
+  private sortingCriteriaSource = new BehaviorSubject<SortingCriteria>({ criteriaString: '', isIncreasing: false });
+
+  public sortingCriteria = this.sortingCriteriaSource.asObservable();
+
+  sort({ criteriaString, isIncreasing }: SortingCriteria): void {
+    this.sortingCriteriaSource.next({ criteriaString, isIncreasing });
+  }
 
   private sortCards(criteria: string, state: boolean): Card[] {
     this.cards = this.dataService.savedCards;

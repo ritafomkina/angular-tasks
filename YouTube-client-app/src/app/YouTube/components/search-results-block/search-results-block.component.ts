@@ -1,58 +1,82 @@
-import { Component, Input, OnChanges, OnDestroy } from '@angular/core';
+import {
+  Component, OnDestroy, OnInit,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
+import { debounceTime, filter } from 'rxjs/operators';
 import { Card } from '../../models/search-item.model';
 import SearchingService from '../../services/searching.service';
 import DataService from '../../services/data.service';
 import SortingService from '../../services/sorting.service';
+import FilteringService from '../../services/filtering.service';
+import { SortingCriteria } from '../../models/sorting-criteria.model';
 
 @Component({
   selector: 'app-search-results-block',
   templateUrl: './search-results-block.component.html',
   styleUrls: ['./search-results-block.component.scss'],
 })
-export default class SearchResultsBlockComponent implements OnChanges, OnDestroy {
+export default class SearchResultsBlockComponent implements OnDestroy, OnInit {
   constructor(
     public dataService: DataService,
-    private sorting: SortingService,
+    private sortingService: SortingService,
     private searchingService: SearchingService,
+    private filteringService: FilteringService,
   ) {}
-
-  @Input() sortCriteria: string;
-
-  @Input() isSortingApplied: boolean;
 
   public cards: Card[];
 
-  searchSubscription: Subscription;
+  private dataSubscription: Subscription;
 
-  ngOnChanges(): void {
+  private searchSubscription: Subscription;
+
+  private sortingSubscription: Subscription;
+
+  private filterSubscription: Subscription;
+
+  public ngOnInit(): void {
     this.searchSubscription = this.searchingService.currentMessage
       .pipe(
+        filter((message: string) => message.length >= 3),
         debounceTime(1000),
       )
       .subscribe((message) => {
-        if (message.length >= 3) {
-          this.getCards(message);
-        }
+        this.getCards(message);
       });
+    this.filterCards();
   }
 
   public ngOnDestroy(): void {
     this.searchSubscription?.unsubscribe();
+    this.dataSubscription?.unsubscribe();
+    this.sortingSubscription?.unsubscribe();
+    this.filterSubscription?.unsubscribe();
   }
 
-  getCards(message: string): void {
+  private getCards(message: string): void {
     this.dataService.getData(message)
-      .subscribe((items) => {
-        this.dataService.cards = items;
+      .subscribe(() => {
+        this.cards = this.dataService.savedCards;
+        this.sortingSubscription = this.sortCards();
+        this.filterSubscription = this.filterCards();
       });
-    this.sortCards(this.dataService.cards);
   }
 
-  sortCards(items: Card[]) {
-    this.cards = this.sortCriteria
-      ? this.sorting.getSortedDataBy(this.sortCriteria, this.isSortingApplied)
-      : items;
+  private sortCards(): Subscription {
+    return this.sortingService.sortingCriteria.subscribe((sortingCriteria: SortingCriteria) => {
+      if (sortingCriteria.criteriaString) {
+        this.sortingService.getSortedDataBy(
+          sortingCriteria.criteriaString,
+          sortingCriteria.isIncreasing,
+        );
+      }
+    });
+  }
+
+  private filterCards(): Subscription {
+    return this.filteringService.filterString.subscribe((string) => {
+      if (string) {
+        this.cards = this.filteringService.filter(string);
+      }
+    });
   }
 }
