@@ -9,12 +9,12 @@ import AuthService from 'src/app/auth/services/auth.service';
 export default class AuthGuardService {
   constructor(private authService: AuthService) { }
 
-  status = false;
+  isLoggedIn = false;
 
   public canActivate():
   boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    this.authService.currentLoginStatus.subscribe((status) => { this.status = status; });
-    return this.status;
+    this.authService.currentLoginStatus.subscribe((state) => { this.isLoggedIn = state; });
+    return this.isLoggedIn;
     // return true;
   }
 }

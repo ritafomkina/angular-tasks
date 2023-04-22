@@ -8,7 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export default class HeaderComponent {
   @Output() showFilteringBlock = new EventEmitter<boolean>();
 
-  onShowFilteringBlock() {
+  public onShowFilteringBlock() {
     this.showFilteringBlock.emit();
   }
 }

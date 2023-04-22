@@ -4,5 +4,5 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export default class SettingBtnControlService {
-  filters = true;
+  public filters = true;
 }

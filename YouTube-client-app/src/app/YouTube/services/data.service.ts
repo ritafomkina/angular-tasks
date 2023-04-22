@@ -57,14 +57,11 @@ export default class DataService {
                   return card;
                 });
                 return this.cards;
-                // я сохраняю полученнуе данные в поле сервиса и в др сервисах
-                // достаю их из этого поля, а не из подписки.
-                // Так как при подписке отправляется новый запрос.
-                // Мой подход хороший для перформанса или нет?
               }),
             );
         }),
         catchError((error) => {
+          // eslint-disable-next-line no-console
           console.log('[ERROR]', error);
           return EMPTY;
         }),

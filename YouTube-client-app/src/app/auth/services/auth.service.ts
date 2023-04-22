@@ -9,8 +9,14 @@ export default class AuthService {
 
   public currentLoginStatus = this.userIsLoggedIn.asObservable();
 
-  setPassword(token: string, user: string): void {
-    localStorage.setItem(token, user);
+  private token = 'user';
+
+  public logIn(user: string): void {
+    localStorage.setItem(this.token, user);
     this.userIsLoggedIn.next(true);
+  }
+
+  public logOut(): void {
+    localStorage.removeItem(this.token);
   }
 }

@@ -5,10 +5,8 @@ import { Card } from 'src/app/youtube/models/search-item.model';
   name: 'filterCards',
 })
 export default class FilterCardsPipe implements PipeTransform {
-  whyINeedToUseThis = true;
-
-  transform(cards: Card[], search: string): Card[] {
-    this.whyINeedToUseThis = !this.whyINeedToUseThis; // почему не могу использовать без this?
+  // eslint-disable-next-line class-methods-use-this
+  public transform(cards: Card[], search: string): Card[] {
     return cards.filter((card) => card.title.toLowerCase().includes(search.toLowerCase()));
   }
 }

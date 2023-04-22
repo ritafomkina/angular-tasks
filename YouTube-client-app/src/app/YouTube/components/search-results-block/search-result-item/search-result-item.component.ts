@@ -9,9 +9,5 @@ import { Card } from '../../../models/search-item.model';
 })
 
 export default class SearchResultItemComponent {
-  // constructor(public data: GetDataService) {}
-
   @Input() card: Card;
-
-  // cards = this.data.getData().subscribe({ next: (data) => console.log(data) });
 }

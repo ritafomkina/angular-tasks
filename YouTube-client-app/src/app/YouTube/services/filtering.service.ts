@@ -13,11 +13,11 @@ export default class FilteringService {
 
   public filterString = this.filterStringSource.asObservable();
 
-  changeString(string: string): void {
+  public changeString(string: string): void {
     this.filterStringSource.next(string);
   }
 
-  filter(term: string): Card[] {
+  public filter(term: string): Card[] {
     return this.dataService.savedCards.filter(
       (card) => card.title.toLowerCase().includes(term.toLowerCase()),
     );

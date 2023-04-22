@@ -16,7 +16,7 @@ export default class SortingService {
 
   public sortingCriteria = this.sortingCriteriaSource.asObservable();
 
-  sort({ criteriaString, isIncreasing }: SortingCriteria): void {
+  public sort({ criteriaString, isIncreasing }: SortingCriteria): void {
     this.sortingCriteriaSource.next({ criteriaString, isIncreasing });
   }
 

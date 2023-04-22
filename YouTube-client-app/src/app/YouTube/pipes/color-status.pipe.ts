@@ -12,7 +12,7 @@ export default class ColorStatusPipe implements PipeTransform {
 
   private red = 'red';
 
-  transform(publishedAt: string): string {
+  public transform(publishedAt: string): string {
     const tobay: Date = new Date();
     const pubDate: Date = new Date(Date.parse(publishedAt));
     const diff: number = Math.abs(tobay.getTime() - pubDate.getTime());

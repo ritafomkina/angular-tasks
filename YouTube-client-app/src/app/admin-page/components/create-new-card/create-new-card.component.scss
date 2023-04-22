@@ -1,31 +1,44 @@
-@import "../../../../styles.scss";
+@import "./../../../../../src/styles.scss";
+
 
 :host {
-  width: 344px;
-border-radius: 5px;
+  width: 433px;
+border-radius: 17px;
 background-color: #F2F2F2;
 @include flex(center, center);
-margin: 100px;
-padding: 20px;
+margin: 50px;
+padding: 40px;
 }
 
 .wrapper {
   @include flex(start, center, column);
-  padding: 17px;
+  row-gap: 25px;
+
+  .input-area {
+    @include flex(start, center, column);
+    row-gap: 15px;
+  }
 }
 
 h3 {
-  @include font(#000000, 'Roboto', normal, 700, 18px, 21px);
+  @include font(#000000, 'Roboto', normal, 700, 22px, 27px);
 }
 
-
+form {
+  @include flex(start, center, column);
+}
 button {
   max-height: 30px;
   width: 124px;
+  margin-top: 20px;
   border-radius: 4px 4px 4px 4px;
   @include font(#FFFFFF);
   filter: drop-shadow(2px 0px 4px #2F80ED);
+  align-self:flex-end;
 
+}
+.alert-validation {
+  @include font(red, 'Roboto', normal, 400, 10px, 0);
 }
 
 .mdc-button {
@@ -34,7 +47,10 @@ button {
 }
 
 .alert-validation {
-  @include font(red, 'Roboto', normal, 400, 10px, 0);
+  width: 100%;
+  color: red;
+  font-size: 10px;
+  margin: 0;
 }
 
 .mdc-line-ripple::before .mdc-line-ripple::after {

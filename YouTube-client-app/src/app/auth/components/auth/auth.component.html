@@ -3,37 +3,39 @@
   <form [formGroup]="authForm" (ngSubmit)="authForm.valid && onSubmit()" class="login-form">
     <mat-form-field [style.width.px]=304 class="login-full-width">
       <mat-label>Login</mat-label>
-      <input matInput placeholder="Login..." [value]="value" formControlName="login" (focus)="loginIsFocused=true" (focusout)="loginIsFocused=false">
-      <p
+      <input matInput placeholder="Login..." formControlName="login">
+
+      <span
       class="alert-validation"
-      *ngIf="login?.errors?.['required'] && !loginIsFocused"
+      *ngIf="login?.errors?.['required'] && isTouched(login)"
     >
     Please enter a login email
-    </p>
-    <p
+    </span>
+    <span
       class="alert-validation"
-      *ngIf="login?.errors?.['email'] && !loginIsFocused"
+      *ngIf="login?.errors?.['email'] && isTouched(login)"
     >
     The login email is invalid
-    </p>
+    </span>
     </mat-form-field>
 
     <mat-form-field [style.width.px]=304 class="login-full-width">
       <mat-label>Password</mat-label>
-      <input matInput placeholder="Password..." [value]="value" formControlName="password" (focus)="passwordIsFocused=true" (focusout)="passwordIsFocused=false">
-      <p
+      <input matInput placeholder="Password..." formControlName="password">
+
+      <span
       class="alert-validation"
-      *ngIf="password?.errors?.['required'] && !passwordIsFocused"
+      *ngIf="password?.errors?.['required'] && isTouched(password)"
     >
     Please enter a password
-    </p>
-    <p
+    </span>
+    <span
       class="alert-validation"
-      *ngIf="(password?.errors?.['minLength'] || password?.errors?.['pattern']) && !passwordIsFocused"
+      *ngIf="(password?.errors?.['minlength'] || password?.errors?.['pattern']) && isTouched(password)"
     >
     Your password isn't strong enough.
    It should contain at least 8 characters, uppercase and lowercase letters, numbers and special character (e.g., !@#?])
-    </p>
+    </span>
     </mat-form-field>
     <button mat-raised-button type="submit" color="primary">Login</button>
   </form>

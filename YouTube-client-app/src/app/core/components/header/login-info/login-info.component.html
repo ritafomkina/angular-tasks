@@ -1,4 +1,7 @@
-<div>Your login</div>
-<button mat-mini-fab aria-label="login" (click)="login()">
+<div class="login-info">
+  <p [ngClass]="{'bold': userName}">{{ userName ? userName : 'Your login' }}</p>
+  <button class="admin-button" mat-button *ngIf="userName" (click)="openAdminPage()">Go to the admin page</button>
+</div>
+<button class="login-button" mat-mini-fab aria-label="login" (click)="onLogin()">
   <mat-icon class="login-icon"></mat-icon>
 </button>

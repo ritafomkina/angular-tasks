@@ -13,11 +13,11 @@ export default class SearchingAreaComponent {
     private searchingService: SearchingService,
   ) {}
 
-  searchForm = this.formBuilder.group({
+  public searchForm = this.formBuilder.group({
     search: '',
   });
 
-  onInput(event: Event): void {
+  public onInput(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (!input.value?.length) {
       return;

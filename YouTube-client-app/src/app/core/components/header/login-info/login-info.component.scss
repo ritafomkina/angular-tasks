@@ -1,25 +1,38 @@
 @import "./../../../../../styles.scss";
 
 :host {
-  height: 24px;
-  width: 24px;
+  height: 80px;
   @include flex;
-  margin-left: 190px;
+  margin-left: 130px;
+  column-gap: 5px;
 }
 
-div {
-  min-width: 60px;
+p {
   @include font(#4F4F4F);
+  margin: 0;
 }
 
-button {
+.login-info {
+  @include flex;
+  flex-direction: column;
+  row-gap: 3px;
+}
+
+.admin-button {
+  text-decoration-line: underline;
+  @include font($colorBlue);
+  text-decoration-line:none;
+  height: 20px;
+}
+
+.login-button {
+  @include font(#4F4F4F);
   @include flex;
   width: 24px;
   height: 24px;
   border-radius: 5px !important;
   background-color: #FFFFFF;
   border: none;
-  // background-color: $colorBlue;
   filter: drop-shadow(2px 2px 4px rgba(47, 128, 237, 0.25));
 
   .login-icon {
@@ -28,5 +41,11 @@ button {
     background-size: cover;
     background-position: center;
 
+  }
+
+  .bold {
+    font-weight: 900;
+    font-size: 20px;
+    // color: red;
   }
 }

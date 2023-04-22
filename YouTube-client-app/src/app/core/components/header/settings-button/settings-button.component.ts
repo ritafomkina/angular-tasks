@@ -11,7 +11,7 @@ export default class SettingsButtonComponent {
 
   @Output() showFilteringBlock = new EventEmitter<boolean>();
 
-  onShowFilteringBlock() {
+  public onShowFilteringBlock() {
     this.settingBtnControlService.filters = !this.settingBtnControlService.filters;
     this.showFilteringBlock.emit();
   }
