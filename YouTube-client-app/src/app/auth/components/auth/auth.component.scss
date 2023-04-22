@@ -2,11 +2,11 @@
 
 :host {
   width: 344px;
-height: 248px;
 border-radius: 5px;
-background-color: #E0E0E0;
+background-color: #F2F2F2;
 @include flex(center, center);
 margin: 100px;
+padding: 20px;
 }
 
 .wrapper {
@@ -18,8 +18,13 @@ h3 {
   @include font(#000000, 'Roboto', normal, 700, 18px, 21px);
 }
 
-.mat-form-field{
+.mat-mdc-text-field-wrapper{
   width:300px !important;
+  background-color: #E0E0E0 !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: red !important;
 }
 
 button {
@@ -34,4 +39,25 @@ button {
 .mdc-button {
   background-color: $colorBlue !important;
   color: #FFFFFF;
+}
+
+
+// .ng-touched.ng-invalid {
+//   border: solid red 2px;
+// }
+// .ng-touched.ng-valid {
+//   border: solid green 2px;
+// }
+
+.alert-validation {
+  width: 100%;
+  color: red;
+}
+
+.mdc-line-ripple::before .mdc-line-ripple::after {
+  display: none !important;
+}
+
+.mat-mdc-form-field-bottom-align {
+  width: 0;
 }

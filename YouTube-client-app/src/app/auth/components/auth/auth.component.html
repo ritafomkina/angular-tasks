@@ -1,14 +1,39 @@
 <div class="wrapper">
   <h3>Login</h3>
-  <form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="login-form">
+  <form [formGroup]="authForm" (ngSubmit)="authForm.valid && onSubmit()" class="login-form">
     <mat-form-field [style.width.px]=304 class="login-full-width">
       <mat-label>Login</mat-label>
-      <input matInput placeholder="Login..." [value]="value" formControlName="login">
+      <input matInput placeholder="Login..." [value]="value" formControlName="login" (focus)="loginIsFocused=true" (focusout)="loginIsFocused=false">
+      <p
+      class="alert-validation"
+      *ngIf="login?.errors?.['required'] && !loginIsFocused"
+    >
+    Please enter a login email
+    </p>
+    <p
+      class="alert-validation"
+      *ngIf="login?.errors?.['email'] && !loginIsFocused"
+    >
+    The login email is invalid
+    </p>
     </mat-form-field>
 
     <mat-form-field [style.width.px]=304 class="login-full-width">
       <mat-label>Password</mat-label>
-      <input matInput placeholder="Password..." [value]="value" formControlName="password">
+      <input matInput placeholder="Password..." [value]="value" formControlName="password" (focus)="passwordIsFocused=true" (focusout)="passwordIsFocused=false">
+      <p
+      class="alert-validation"
+      *ngIf="password?.errors?.['required'] && !passwordIsFocused"
+    >
+    Please enter a password
+    </p>
+    <p
+      class="alert-validation"
+      *ngIf="(password?.errors?.['minLength'] || password?.errors?.['pattern']) && !passwordIsFocused"
+    >
+    Your password isn't strong enough.
+   It should contain at least 8 characters, uppercase and lowercase letters, numbers and special character (e.g., !@#?])
+    </p>
     </mat-form-field>
     <button mat-raised-button type="submit" color="primary">Login</button>
   </form>
