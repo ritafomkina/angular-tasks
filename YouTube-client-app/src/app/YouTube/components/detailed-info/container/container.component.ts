@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Card } from 'src/app/youtube/models/search-item.model';
 import DataService from 'src/app/youtube/services/data.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-container',
@@ -14,6 +15,7 @@ export default class ContainerComponent implements OnInit {
   constructor(
     public route: ActivatedRoute,
     private dataServise: DataService,
+    private location: Location,
   ) {}
 
   public cards: Card[];
@@ -25,5 +27,9 @@ export default class ContainerComponent implements OnInit {
         this.card = this.dataServise.savedCards.find((card) => card.id === params.id)!;
       },
     );
+  }
+
+  public goBack() {
+    this.location.back();
   }
 }
