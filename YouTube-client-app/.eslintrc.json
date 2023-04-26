@@ -35,7 +35,8 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "class-methods-use-this": "off"
       }
     },
     {
@@ -45,7 +46,8 @@
       "extends": [
         "plugin:@angular-eslint/template/recommended"
       ],
-      "rules": {}
+      "rules": {
+      }
     }
   ]
 }

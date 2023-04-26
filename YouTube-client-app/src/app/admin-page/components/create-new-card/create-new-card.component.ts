@@ -28,7 +28,6 @@ export default class CreateNewCardComponent implements OnInit {
     });
   }
 
-  // eslint-disable-next-line class-methods-use-this
   public isTouched(formControlName: FormControl): boolean {
     const state = formControlName.dirty || formControlName.touched;
     return state;

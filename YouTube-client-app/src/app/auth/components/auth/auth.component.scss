@@ -36,11 +36,3 @@ button {
 .alert-validation {
   @include font(red, 'Roboto', normal, 400, 10px, 0);
 }
-
-.mdc-line-ripple::before .mdc-line-ripple::after {
-  display: none !important;
-}
-
-.mat-mdc-form-field-bottom-align {
-  width: 0;
-}

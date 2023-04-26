@@ -7,13 +7,13 @@
 
         <input matInput placeholder="" formControlName="title">
 
-        <span class="alert-validation" *ngIf="title?.errors?.['required'] && (title.dirty || title.touched)">
+        <span class="alert-validation" *ngIf="title?.errors?.['required'] && isTouched(title)">
           Please enter a title
         </span>
-        <span class="alert-validation" *ngIf="title?.errors?.['minlength'] && (title.dirty || title.touched)">
+        <span class="alert-validation" *ngIf="title?.errors?.['minlength'] && isTouched(title)">
           The title is too short
         </span>
-        <span class="alert-validation"*ngIf="title?.errors?.['maxlength'] && (title.dirty || title.touched)">
+        <span class="alert-validation"*ngIf="title?.errors?.['maxlength'] && isTouched(title)">
           The title is too long
         </span>
 
@@ -21,7 +21,7 @@
       <mat-form-field [style.width.px]=380 class="card-full-width">
         <mat-label>Description</mat-label>
         <input matInput placeholder="" formControlName="description">
-        <span class="alert-validation"*ngIf="description?.errors?.['maxlength'] && (description.dirty || description.touched)">
+        <span class="alert-validation"*ngIf="description?.errors?.['maxlength'] && isTouched(description)">
           The description is too long
         </span>
 
@@ -29,10 +29,10 @@
       <mat-form-field [style.width.px]=380 class="card-full-width">
         <mat-label>Image</mat-label>
         <input matInput placeholder="" formControlName="image">
-        <span class="alert-validation" *ngIf="image?.errors?.['required'] && (image.dirty || image.touched)">
+        <span class="alert-validation" *ngIf="image?.errors?.['required'] && isTouched(image)">
           Please enter a link to the image
         </span>
-        <span class="alert-validation"*ngIf="image?.errors?.['pattern'] && (image.dirty || image.touched)">
+        <span class="alert-validation"*ngIf="image?.errors?.['pattern'] && isTouched(image)">
           The image link is invalid
         </span>
       </mat-form-field>
@@ -40,10 +40,10 @@
       <mat-form-field [style.width.px]=380 class="card-full-width">
         <mat-label>Video link</mat-label>
         <input matInput placeholder="" formControlName="videoURL">
-        <span class="alert-validation" *ngIf="videoURL?.errors?.['required'] && (videoURL.dirty || videoURL.touched)">
+        <span class="alert-validation" *ngIf="videoURL?.errors?.['required'] && isTouched(videoURL)">
           Please enter a link to the video
         </span>
-        <span class="alert-validation" *ngIf="videoURL?.errors?.['pattern'] && (videoURL.dirty || videoURL.touched)">
+        <span class="alert-validation" *ngIf="videoURL?.errors?.['pattern'] && isTouched(videoURL)">
           The video link is invalid
         </span>
       </mat-form-field>
@@ -51,10 +51,10 @@
       <mat-form-field [style.width.px]=380 class="card-full-width">
         <mat-label>Creation date</mat-label>
         <input matInput placeholder="" formControlName="date" type="date">
-        <span class="alert-validation" *ngIf="date?.errors?.['required'] && (date.dirty || date.touched)">
+        <span class="alert-validation" *ngIf="date?.errors?.['required'] && isTouched(date)">
           Please enter a creation date
         </span>
-        <span class="alert-validation" *ngIf="date?.errors?.['dateIsInvalid'] && (date.dirty || date.touched)">
+        <span class="alert-validation" *ngIf="date?.errors?.['dateIsInvalid'] && isTouched(date)">
           The date is invalid
         </span>
       </mat-form-field>

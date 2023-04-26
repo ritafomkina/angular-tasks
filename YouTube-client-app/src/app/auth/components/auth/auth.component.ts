@@ -37,7 +37,6 @@ export default class AuthComponent implements OnInit {
     return this.authForm.controls.password as FormControl;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   public isTouched(formControlName: FormControl): boolean {
     const state = formControlName.dirty || formControlName.touched;
     return state;
