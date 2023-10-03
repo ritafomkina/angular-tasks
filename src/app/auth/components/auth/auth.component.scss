@@ -10,7 +10,7 @@ padding: 20px;
 }
 
 .wrapper {
-  @include flex(start, center, column);
+  @include flex(flex-start, center, column);
   padding: 17px;
 }
 

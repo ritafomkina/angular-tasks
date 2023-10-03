@@ -20,11 +20,11 @@ img {
 
 .info-container{
   padding: 20px;
-  @include flex(start, start, column);
+  @include flex(flex-start, flex-start, column);
   row-gap: 5px;
 }
 .desc-container {
-  @include flex(start, start, column);
+  @include flex(flex-start, flex-start, column);
   row-gap: 8px;
 }
 

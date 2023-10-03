@@ -1,7 +1,7 @@
 @import "../../../../../styles.scss";
 
 :host {
-  @include flex(start, start);
+  @include flex(flex-start, flex-start);
   padding-top: 50px;
 }
 
