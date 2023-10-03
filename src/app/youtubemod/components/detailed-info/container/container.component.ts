@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Card } from 'src/app/youtube/models/search-item.model';
-import DataService from 'src/app/youtube/services/data.service';
+import { Card } from 'src/app/youtubemod/models/search-item.model';
+import DataService from 'src/app/youtubemod/services/data.service';
 import { Location } from '@angular/common';
 
 @Component({

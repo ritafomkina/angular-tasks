@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'main',
-    loadChildren: () => import('./youtube/youtube.module').then((m) => m.default),
+    loadChildren: () => import('./youtubemod/youtube.module').then((m) => m.default),
     canActivate: [AuthGuardService],
   },
   { path: '**', component: ErrorPageComponent },

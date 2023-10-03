@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { Card } from 'src/app/youtube/models/search-item.model';
+import { Card } from 'src/app/youtubemod/models/search-item.model';
 
 @Component({
   selector: 'app-more-button',

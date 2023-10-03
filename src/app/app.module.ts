@@ -5,7 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import AppRoutingModule from './app-routing.module';
 import AppComponent from './app.component';
 import CoreModule from './core/core.module';
-import YouTubeHttpInterceptor from './youtube/interceptors/http-interceptor';
+import YouTubeHttpInterceptor from './youtubemod/interceptors/http-interceptor';
 
 @NgModule({
   declarations: [

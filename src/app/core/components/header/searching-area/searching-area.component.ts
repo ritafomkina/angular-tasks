@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import SearchingService from 'src/app/youtube/services/searching.service';
+import SearchingService from 'src/app/youtubemod/services/searching.service';
 
 @Component({
   selector: 'app-searching-area',
